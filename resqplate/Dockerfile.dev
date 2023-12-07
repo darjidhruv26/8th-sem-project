@@ -1,0 +1,7 @@
+FROM node:alpine
+WORKDIR /resqplate
+COPY package.json .
+RUN npm i
+COPY . .
+CMD ["npm", "start"]
+

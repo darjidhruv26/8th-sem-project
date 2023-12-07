@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  resqplate:
+    image: resqplate-prod-i
+    build:
+      dockerfile: Dockerfile.prod
+    container_name: resqplate-prod-c
+    ports:
+      - "8080:80"
+    environment:
+      - NODE_ENV=production

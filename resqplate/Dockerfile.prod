@@ -1,0 +1,11 @@
+FROM node:alpine AS build
+WORKDIR /resqplate
+COPY package.json .
+RUN npm i
+COPY . .
+RUN npm run build
+
+FROM nginx
+COPY --from=build /resqplate/build /usr/share/nginx/html
+
+
